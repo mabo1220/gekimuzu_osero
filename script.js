@@ -105,7 +105,8 @@ function cpuMove() {
                     let nextBoard = board.map(row => [...row]);
                     nextBoard[r][c] = CPU;
                     flips.forEach(([fr, fc]) => nextBoard[fr][fc] = CPU);
-                    let score = alphaBeta(nextBoard, 4, -Infinity, Infinity, false);
+                    //難易度５
+                    let score = alphaBeta(nextBoard, 5, -Infinity, Infinity, false);
                     if (score > bestScore) {
                         bestScore = score;
                         bestMove = {r, c};
@@ -192,3 +193,4 @@ function hasValidMove(color) {
 
 // 起動
 initGame();
+
